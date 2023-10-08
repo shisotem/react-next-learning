@@ -20,11 +20,13 @@ export default function Home() {
   };
 
   useEffect(() => {
+    console.log(`マウント時: ${count}`);
     document.body.style.backgroundColor = "lightblue";
     return () => {
+      console.log(`アンマウント時: ${count}`);
       document.body.style.backgroundColor = "";
     };
-  }, []);
+  }, [count]);
 
   return (
     <div className={styles.container}>
