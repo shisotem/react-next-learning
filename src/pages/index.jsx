@@ -5,24 +5,14 @@ import { Main } from "src/components/Main";
 import { Header } from "src/components/Header";
 import { useCallback, useEffect, useState } from "react";
 
-// const handleClick = (e, foo) => {
-//   console.log(e.target.href);
-//   e.preventDefault();
-//   alert(foo);
-// };
-
 export default function Home() {
   const [count, setCount] = useState(1);
 
-  const handleClick = useCallback(
-    (e) => {
-      console.log(count);
-      if (count < 10) {
-        setCount((foo) => foo + 1);
-      }
-    },
-    [count]
-  );
+  const handleClick = useCallback(() => {
+    if (count < 10) {
+      setCount((foo) => foo + 1);
+    }
+  }, [count]);
 
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue";
